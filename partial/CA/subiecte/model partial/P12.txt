@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+int corect(char*nl){
+   int i;
+   for(i=0; nl[i]; i++)
+      if(!isdigit(nl[i])) return 0;
+   return 1;
+}
+void cvcarcif(int nc, char *nl){
+   int i;
+   for(i=0; i<nc; i++)
+      nl[i]-='0';
+}
+
+int nz(int nc, char *nl){
+   int i;
+   for(i=0; i<nc; i++)
+      if(nl[i]) return 1;
+   return 0;
+}     
+int  divz(int b, int nc, char *nl){
+     int r=0, i;
+     for(i=0; i<nc; i++){
+        r = 10*r + nl[i];
+        nl[i] = r/b;
+        r %= b;      
+     }
+     return r;
+}
+void cv10b(int b, int nc, char *nl, int *n, char *nb){
+     int i=0;
+     do{
+        nb[i++] = divz(b, nc, nl);    
+     }while(nz(nc, nl));
+     *n = i;
+}
+static char hexa[]="0123456789ABCDEF";
+int main(){
+  int b, nc, i, n;
+  char nl[200], nb[200];
+  scanf("%d", &b);
+  while(gets(nl))
+     if(corect(nl)){
+        nc = strlen(nl);       
+        printf("%s\n", nl);
+        cvcarcif(nc, nl);
+        cv10b(b, nc, nl, &n, nb);
+        for(i=n-1; i>=0; i--)
+           printf("%c", hexa[nb[i]]);
+        printf("\n");             
+     }
+  system("PAUSE");	
+  return 0;
+}
+
+

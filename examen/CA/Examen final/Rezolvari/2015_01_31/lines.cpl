@@ -1,0 +1,65 @@
+int main(void)
+{
+	char filename1[] = "./data/traffic/traffic_classes";
+	char filename2[] = "./data/traffic/traffic.in";
+	FILE *in1, *in2;
+	in1 = fopen(filename1, "rt");
+	in2 = fopen(filename2, "rt");
+	char type[100], csv[500];
+	char *p;
+	fgets(type, 50, in1);
+	fgets(csv, 400, in2);
+	printf("time\n");
+	while (fgets(type, 50, in1)) {
+		fgets(csv, 400, in2);
+		type[strlen(type) - 1] = '\0';
+		int cnt = 0;
+		if (strcmp(type, "benigna")) {
+			p = strtok(csv, ",\n");
+			double time = 0;
+			double avg = 0;
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+		if (strcmp(type, "benigna")) {
+			p = strtok(csv, ",\n");
+			double time = 0;
+			double avg = 0;
+			while (p) {
+				cnt++;
+				if (cnt == 5) {
+					int i = 0;
+					int days = 0, hours = 0, minutes = 0, sec = 0;
+					double ms = 0;
+					while (i <= strlen(p) && p[i] >= '0' && p[i] <= '9') {
+						days = days * 10 + p[i] - '0';
+						i++;
+					}
+					while (i <= strlen(p) && !(p[i] >= '0' && p[i] <= '9')) {
+						i++;
+					}
+					while (i <= strlen(p) && p[i] >= '0' && p[i] <= '9') {
+						hours = hours * 10 + p[i] - '0';
+						i++;
+					}
+					i++;
+					while (i <= strlen(p) && p[i] >= '0' && p[i] <= '9') {
+						minutes = minutes * 10 + p[i] - '0';
+						i++;
+					}
+					i++;
+					while (i <= strlen(p) && p[i] >= '0' && p[i] <= '9') {
+						sec = sec * 10 + p[i] - '0';
+						i++;
+					}
+					i++;
+					double p10 = 10.0;
+					while (i <= strlen(p) && p[i] >= '0' && p[i] <= '9') {
+						ms = ms + (p[i] - '0') / p10;
+						i++;
+						p10 *= 10.0;
+					}
+					time = days * 24 * 3600 + hours * 3600 + minutes * 60 + sec + ms;
+					printf("%lf ", time);

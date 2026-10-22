@@ -1,0 +1,13 @@
+    O solutie in care se presupune ca exista o functie
+int get_size(void *p) care returneaza dimensiunea unei zone
+de memorie p alocata in prealabil cu malloc, va fi notata cu
+punctaj maxim (fara a implementa functia get_size).
+    Exemplu de implementare al acestei solutii se gaseste in myrealloc_simple_solution.c
+    Se cere doar functia de realocare!
+
+
+    Pentru a demonstra cum se implementeaza, oferim o solutie in myrealloc_complex_solution.c,
+in care aratam ca pentru a scrie functia de get_size, trebuie sa suprascriem functia
+malloc.
+    Vom folosi in continuare doar mymalloc, myrealloc si myfree, intrucat ideea se bazeaza pe
+alocara cu sizeof(int) mai multi octeti si salvarea lungimii sirului de bytes inaintea acestuia.

@@ -1,0 +1,31 @@
+10
+Alexandru Popescu
+311CA
+9.15
+Ioana Ionescu
+312CA
+8.75
+Andrei Dumitru
+313CA
+7.60
+Maria Georgescu
+314CA
+9.50
+Cristian Ene
+315CA
+8.10
+Bianca Stancu
+311CA
+9.30
+Radu Vasile
+312CA
+8.85
+Ana Marinescu
+313CA
+9.05
+Gabriel Ciobanu
+314CA
+7.95
+Elena Popa
+315CA
+8.65

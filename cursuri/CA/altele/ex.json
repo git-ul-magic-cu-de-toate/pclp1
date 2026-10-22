@@ -1,0 +1,26 @@
+{
+  "data": {
+    "schema": {
+      "searchableFields": [
+        "productName",
+        "price",
+        "duration",
+        "category",
+        "description",
+        "productLink",
+        "productImgUrl"
+      ],
+      "metadataFields": [
+        "productName",
+        "price",
+        "duration",
+        "category",
+        "description",
+        "productLink",
+        "productImgUrl"
+      ]
+    },
+    "name": "{{3.productName}}",
+    "items": ["{{8.json}}"]
+  }
+}

@@ -1,0 +1,67 @@
+SAVA Victor 311CA
+
+### Image editor
+
+I have organised my project so that in the main function I only have a loop
+which reads all the commands one by one.
+
+I have organised my files such as:
+
+- image_editor.c: main loop
+- utils.c/.h: functions that implement the commands that work with images
+
+# MAIN function
+
+For the implementation of this algorithm I have used a structure called `image_t`
+that stores image information like format, width, height, max value of pixel
+and 2 two-dimensional arrays called gray_image and color_image.
+
+I have divided the code into 9 sections for each command:
+
+# LOAD section
+
+In the LOAD section, I have implemented the `load_command` function that
+reads and stores information about an image in a `image_t` struct.
+Before entering the `load_command` function I have freed from memory the
+previously loaded images to avoid memory leaks and overwriting of the values stored.
+
+# SELECT section
+
+In the SELECT section, I have implemented the `select_command` function that selects
+a rectangular portion of the image. Upon loading a new image,
+it is automatically selected completely.
+
+# ROTATE section
+
+In the ROTATE section I have implemented the `rotate_command` function that rotates
+the whole image or a square selection of the image by +/-90, +/-180 or +/-270 degrees.
+
+# CROP section
+
+In the CROP section I have implemented the `crop_command` function that reduce
+the image to that contained within the current selection.
+
+# HISTOGRAM section
+
+In the HISTOGRAM section I have implemented the `histogram_command` function
+that prints the histogram for a grayscale image.
+
+# EQUALIZE section
+
+In the EQUALIZE section I have implemented the `equalize_command` function that
+equalizes the tones of the grayscale image by applying a mathematical equalize function.
+
+# APPLY section
+
+In the APPLY section I have implemented the `apply_command` function that
+applies filters to color images. The 4 possible filters are EDGE, SHARPEN, BLUR
+and GAUSSIAN_BLUR.
+
+# SAVE section
+
+In the SAVE section, I implemented the `save_command` function to save the image
+in the desired data format.
+
+# EXIT section
+
+In the EXIT section I terminate the program by making sure I don't have any memory leaks.

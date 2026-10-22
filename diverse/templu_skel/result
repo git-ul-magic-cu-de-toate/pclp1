@@ -1,0 +1,112 @@
+
+Run cpplint
+
+Task2.c:155:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+Task3.c:4:  Missing username in TODO; it should look like "// TODO(my_username): Stuff."  [readability/todo] [2]
+Done processing Task1.c
+Done processing Task2.c
+Done processing Task3.c
+Done processing tema2.c
+Total errors found: 2
+
+Run clang-tidy-12
+
+20 warnings generated.
+63 warnings generated.
+77 warnings generated.
+91 warnings generated.
+/mnt/c/Users/Florin/Desktop/templu_skel/Task1.c:63:44: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    int x = (*(sir + lungime - 2) - '0') * 10 + *(sir + lungime - 1) - '0';
+                                           ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task1.c:85:15: warning: 150 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char sir2[150];
+              ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task1.c:107:14: warning: 100 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char var[100];
+             ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:11:21: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+void reverse(char s[1001]) {
+                    ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:22:30: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+void trimleadingzeros(char s[1001]) {
+                             ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:34:16: warning: 31 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:34:32: warning: 79 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+                               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:34:48: warning: 79 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+                                               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:71:68: warning: 26 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = LitereMici[centru_litere + s[i] - 'a' - cheie % 26];
+                                                                   ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:73:68: warning: 26 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = LitereMari[centru_litere + s[i] - 'A' - cheie % 26];
+                                                                   ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:76:62: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = cifre[centru_cifre + s[i] - '0' - cheie % 10];
+                                                             ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:81:35: warning: 11 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+void vigenere(char* s, char cheie[11]) {
+                                  ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:82:16: warning: 31 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:82:32: warning: 79 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+                               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:82:48: warning: 79 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char cifre[31], LitereMari[79], LitereMici[79];
+                                               ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:109:65: warning: 26 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = LitereMici[centru_litere + s[i] - 'a' - nr % 26];
+                                                                ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:111:65: warning: 26 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = LitereMari[centru_litere + s[i] - 'A' - nr % 26];
+                                                                ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:113:59: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+            s[i] = cifre[centru_cifre + s[i] - '0' - nr % 10];
+                                                          ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:125:14: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char add[1001] = "";
+             ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:136:22: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        char dummy = suma % 10 + '0';
+                     ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:136:29: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        char dummy = suma % 10 + '0';
+                            ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:138:28: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        sacrifice = suma / 10;
+                           ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:144:22: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        char dummy = suma % 10 + '0';
+                     ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:144:29: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        char dummy = suma % 10 + '0';
+                            ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:146:28: warning: 10 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        sacrifice = suma / 10;
+                           ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:150:23: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        char dummy1 = sacrifice + '0';
+                      ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:161:14: warning: 9 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char tip[9];
+             ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:163:12: warning: 11 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char K[11];
+           ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:165:12: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+    char S[1001];
+           ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:177:17: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        char N1[1001], N2[1001];
+                ^
+/mnt/c/Users/Florin/Desktop/templu_skel/Task2.c:177:27: warning: 1001 is a magic number; consider replacing it with a named constant [cppcoreguidelines-avoid-magic-numbers]
+        char N1[1001], N2[1001];
+                          ^
+Suppressed 60 warnings (56 in non-user code, 4 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

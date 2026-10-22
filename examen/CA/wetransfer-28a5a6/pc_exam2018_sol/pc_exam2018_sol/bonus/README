@@ -1,0 +1,22 @@
+	- rezolvarea se gaseste in main.c
+		ATENTIE! Nu era nevoie sa scrieti un program complet/functional!
+		Se cerea doar secventa de cod:
+
+			int capacity = 2, size = 0, x;
+			int *v = malloc(capacity * sizeof(int));
+			scanf("%d", &x);
+			while (x != -1) {
+				if (size == capacity) {
+					capacity *= 2;
+					v = realloc(v, capacity * sizeof(int));
+				}
+				v[size++] = x;
+				scanf("%d", &x);
+			}
+
+	- compilare:
+		make build
+
+	- rulare:
+		./main
+		(introduceti numere naturale apoi un -1)

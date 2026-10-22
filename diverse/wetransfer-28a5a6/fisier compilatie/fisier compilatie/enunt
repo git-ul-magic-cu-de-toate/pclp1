@@ -1,0 +1,8 @@
+Fișier compilație
+Un fişier compilaţie este un fişier text, alcătuit din linii extrase din mai multe fişiere. Un fişier catalog este un fişier text în care o linie conţine numele unui fişier din care se extrag linii şi doi întregi: numărul liniei de început şi numărul total de linii extrase.
+
+Folosind-se fişierul catalog, să se creeze fişierul compilaţie.
+
+Să se afişeze pe ecran numărul de fişiere care au fost folosite pentru alcătuirea compilaţiei, ştiind că un fişier poate apare în compilaţie de mai multe ori.
+
+Numele fişierului catalog este dat că parametru al comenzii. Fişierul compilaţie va avea acelaşi nume, dar extensia .cpl.

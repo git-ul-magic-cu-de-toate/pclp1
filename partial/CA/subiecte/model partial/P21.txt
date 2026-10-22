@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void extrdinCNP(char *CNP, char *rez);
+void sortare(char **nume, char **crit, int n);
+char *numeluna(int n);
+int main()
+{
+  char linie[80], **nume=NULL, **exCNP=NULL, *p, rez[7];
+  int n=0,nl,i;
+  while(gets(linie)){
+     nume=(char**)realloc(nume, ++n*sizeof(char*));
+     exCNP=(char**)realloc(exCNP, n*sizeof(char*));
+     p=strchr(linie, ' ');
+     p=strchr(p+1, ' ');
+     nume[n-1]=(char*)malloc(p-linie+1);
+     strncpy(nume[n-1],linie,p-linie);
+     nume[n-1][p-linie]=0;
+     exCNP[n-1]=(char*)malloc(7);
+     extrdinCNP(p+1, rez);
+     strcpy(exCNP[n-1],rez);                
+  }
+  sortare(nume,exCNP,n);
+  for(i=0; i<n; i++){
+     nl=10*(exCNP[i][2]-'0')+exCNP[i][3]-'0';
+     printf("%s %c%c %s 19%c%c\n", nume[i],exCNP[i][4],exCNP[i][5],
+             numeluna(nl),exCNP[i][0],exCNP[i][1]);
+  }
+  system("PAUSE");	
+  return 0;
+}
+void extrdinCNP(char *CNP, char *rez){
+   int i;
+   strncpy(rez, CNP+1, 6);
+   CNP[6]=0;
+}
+void sortare(char **nume, char **crit, int n){
+   int i, gata;
+   char *t;
+   do{
+      gata=1;
+      for(i=0; i<n-1; i++)
+         if(strcmp(crit[i], crit[i+1])>0){
+            t=nume[i]; nume[i]=nume[i+1]; nume[i+1]=t;
+            t=crit[i]; crit[i]=crit[i+1]; crit[i+1]=t;
+            gata=0;                
+         } 
+   }while(!gata);
+}     
+char *numeluna(int n){
+   static char* nl[]={"ianuarie", "februarie", "martie", "aprilie",
+                 "mai", "iunie", "iulie", "august", "septembrie",
+                 "octombrie","noiembrie","decembrie"};
+   return nl[n-1];
+}

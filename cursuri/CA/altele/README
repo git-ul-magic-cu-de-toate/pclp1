@@ -1,0 +1,6 @@
+* compile all:
+    make
+* clean:
+    make clean
+* compile & run one source
+    make run src=00-demo.c

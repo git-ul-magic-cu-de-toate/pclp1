@@ -1,0 +1,28 @@
+# Copyright 2020 Darius Neatu (neatudarius@gmail.com)
+
+CC = gcc
+CFLAGS = -Wall -Wextra
+LDFLAGS = -lm
+
+TARGET = 02-student-deep_copy
+
+# build all targets
+all: $(TARGET)
+
+# general rule for building a target
+$(TARGET): main.c student.c
+	$(CC) $(CFLAGS) -o $@ main.c student.c $(LDFLAGS)
+
+# run a single target
+run: $(TARGET)
+	./$(TARGET)
+
+# clean all related target files
+clean:
+	rm -f *.o $(TARGETS)
+
+# pack directory
+pack:
+	zip $(ZIP).zip *.c *.h Makefile README
+
+.PHONY: pack clean

@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+long exdinCNP(char *CNP){
+    int i;
+    long n=0;
+    for(i=1; i<=6; i++)
+       n = 10*n + CNP[i] - '0';
+    return n;
+}
+
+int  major(char *CNP){
+    long n;
+    n = exdinCNP(CNP) + 180000;
+    return n >= 101120;
+}
+
+char *numeluna(int luna){
+static char *nl[]={"ianuarie", "februarie", "martie",
+                   "aprilie", "mai", "iunie", "iulie",
+                   "august", "septembrie", "octombrie", 
+                   "noiembrie", "decembrie"};
+    return nl[luna-1];
+}
+
+int main(){
+    char linie[80], *p, **tn=NULL, **tCNP=NULL;
+    int n=0, i, l;
+    while(gets(linie)){
+       tn =   (char**)realloc(tn, ++n*sizeof(char*));
+       tCNP = (char**)realloc(tCNP, n*sizeof(char*));
+       p = strtok(linie, " ");
+       tn[n-1] = (char*)malloc(strlen(p)+1);
+       strcpy(tn[n-1], p);
+       p = strtok(NULL, " ");
+       l = strlen(tn[n-1]);
+       tn[n-1] = (char*)realloc(tn[n-1], strlen(p)+l+1);
+       strcpy(tn[n-1]+l, p);
+       p = strtok(NULL, " \n\0");
+       tCNP[n-1] = (char*)malloc(strlen(p)+1);
+       strcpy(tCNP[n-1], p);                   
+    }  
+    for(i=0; i<n; i++)
+       if(major(tCNP[i])){
+          l = 10*(tCNP[i][3]-'0')+tCNP[i][4]-'0';
+          printf("%s %c%c %s 19%c%c\n", tn[i], tCNP[i][5], tCNP[i][6], 
+                     numeluna(l), tCNP[i][1], tCNP[i][2]);
+          }
+    system("PAUSE");	
+    return 0;
+}

@@ -1,0 +1,9 @@
+// Copyright 2017 PC Team
+
+	- rezolvare in expandinc.c
+	
+	- compilare:
+		make build
+
+	- rulare:
+		./pronosport < bilete.txt 

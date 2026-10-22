@@ -1,0 +1,86 @@
+`jocuri_societate:`
+The solution to this problem involves simulating a battle scenario where a
+player is provided with health points (HP) and a set of shields to protect
+against damage dealt by multiple enemies.The approach is to read the player's
+HP and available shields, then process each enemy's attack by comparing the
+damage to the available shields. The largest shield that can mitigate the
+damage is selected, and the HP is updated accordingly. If the shield is used,
+it is removed from the list of available shields. The process continues until
+either the player survives all the enemies or dies due to insufficient health.
+
+- Key functions:
+  1.  `read_type_value`: This function reads a series of items (health potions or
+      shields) and updates the player's HP or shield inventory accordingly.
+  2.  `sort_vector`: This function sorts the shield array to ensure that the
+      largest shield is accessed first during battle.
+  3.  `find_max_shield`: This function finds the largest shield that is less than
+      or equal to the enemy's damage, optimizing defense.
+  4.  `remove_shield`: After using a shield, this function removes it from the
+      list of available shields.
+  5.  `boss_fight`: This is the main battle function, handling multiple enemies
+      and updating the player's HP while managing the shields.
+
+`forme:`
+The solution to this problem involves creating a program that displays
+different geometric shapes based on user input. The program reads a number
+of shapes and their respective parameters such as size and angle, then prints
+the corresponding shape using asterisks (`*`). The shapes include a square,
+rectangle, right triangle, cross, and window, some of which can be rotated
+by specific angles. The program ensures the input parameters are valid,
+and if not, it prints an error message. It handles multiple rotations, such as
+90, 45, 180, and 270 degrees, by normalizing the rotation angle to a valid
+value before printing the shape.
+
+- Key functions:
+  1.  `print_square`: This function displays a square or rhombus based on the
+      size and angle, ensuring the rotation is a multiple of 45.
+  2.  `print_rectangle`: This function handles the display of a rectangle,
+      checking the validity of the dimensions before printing.
+  3.  `print_right_triangle`: It normalizes the angle and prints the triangle
+      in different orientations (0, 90, 180, 270 degrees).
+  4.  `print_cross`: This function prints a cross shape and handles rotation
+      by 45-degree increments.
+  5.  `print_window`: It generates a window shape with a specified size,
+      ensuring the size is odd and within valid bounds.
+
+`circuits:`
+The solution to this problem involves creating a circuit validation system
+based on Kirchhoffs laws. It reads input data for a circuit consisting of
+nodes and wires and checks if the two Kirchhoff laws are respected or violated.
+The first law ensures that the sum of current intensities entering and
+leaving each node is equal. The second law checks if the sum of voltages
+around a loop is zero. If the circuit is not valid, specific errors are
+reported, such as open circuits or violations of Kirchhoffs laws.
+
+- Key functions:
+  1.  `store_intensity_matrix`: Reads and stores wire intensities for each node.
+  2.  `check_open_circuit`: Verifies if the circuit is closed by checking if any
+      node has less than two connections.
+  3.  `check_equal_sum_1`: Checks if the sum of currents entering a node equals
+      the sum leaving it.
+  4.  `calculate_sums` and `check_equal_sum_2`: Handle the second law,
+      ensuring the sum of resistances equals the sum of voltage sources.
+
+`segment_display:`
+The solution to this problem involes implementing a display system for a
+7-segment-like display, where various commands manipulate a matrix of
+characters.
+
+- The various commands are:
+
+  - `F`: Fills the matrix with a digit (specified by the user).
+  - `W`: Moves the matrix up by a specified number of rows.
+  - `A`: Moves the matrix left by a specified number of columns.
+  - `S`: Moves the matrix down by a specified number of rows.
+  - `D`: Moves the matrix right by a specified number of columns.
+  - `P`: Prints the matrix to the console.
+  - `Q`: Quits the program.
+  - Invalid commands trigger an error message.
+
+- Key functions:
+  - `fill_matrix_with_digit`: Reads a digit (0-9) from input and fills the
+    digit matrix accordingly by calling specific functions for each digit
+  - Matrix Manipulation Functions: `move_up`, `move_left`, `move_down`,
+    `move_right`: These functions move the matrix in different directions by
+    shifting the characters in the matrix and using a temporary array for the
+    rows/columns being moved.

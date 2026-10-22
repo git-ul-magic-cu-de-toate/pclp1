@@ -1,0 +1,76 @@
+SAVA Victor 311CA
+
+### Marching Squares Algorithm
+
+I have organised my project so that in the main function I only have a loop
+which reads all the commands one by one, executing all commands.
+
+I organised my files such as:
+
+- marching_squares.c: main loop
+- march_squares_functions.c/.h: functions that implement the commands that work with
+  pixel and grid arrays
+- change_pixel.c/.h: functions that change the pixel array
+- init_contour.c/.h: functions that print the contour
+
+For the implementation of this algorithm I have used a three dimensional dinamically
+allocated array named suggestively - pixel.
+
+In main function I have divided the code into 7 sections for each command:
+
+# READ section
+
+In the READ section I have implemented the read function. Before entering the
+read function I have freed the previously read images and previous grid patterns
+to avoid memory leaks and overwriting of the values stored.
+
+# WRITE section
+
+In the WRITE section I have implemented the write function that displays all
+information about the image.
+
+# RESIZE section
+
+In the RESIZE section I have implemented the resize function that enlarges the pixel
+array by a factor of 4, updating its dimensions and copying the pixel data into a new
+resized array.
+Firstly, I allocate memory to a new three dimensional array named pixel_resize that
+has the values of height and width each multiplied by 4.
+Then, I copy the data from the original pixel array to the pixel_resize array by iterating
+through the new values of height and width and calculating the position of the original
+pixel (orig_i = i / 4, orig_j = j / 4) and copying its color data across the resized array.
+At the end, the pixel array is freed and the funtion returns the new pixel_resize array.
+
+# GRID section
+
+In the GRID section I have implemented the generate_grid function that generates
+the grid for a particular image. The grid is a two dimensional matrix that contains
+only values of 0 and 1. At the end of the section I print the grid array.
+Similarly to the read function I have freed the previously used grid array.
+Firstly, I dinamically allocate memory to a two dimensional array named grid that
+stores (height / 4 + 1) X (width / 4 + 1) elements.
+Then, I calculate the values of the grid array based on the values in the pixel array
+by calculating the average of the sum of the current pixel element and his neighbors
+in an X shape.
+Afterwards, I convert the grid to values of 0 and 1 based on the threshold value = 200
+and return grid.
+
+# MARCH section
+
+In the MARCH section I have implemented the march function that applies the marching squares
+algorithm.
+Firstly, I check if the GRID command was run beforehand.
+Afterwards, I apply the generate_grid function to generate the grid array.
+Based on the values in the grid array, I create the march_grid array that stores values
+only from 0 to 15.
+Then, I modify the pixel array based on the 16 cases of the marching squares algorithm.
+
+# INIT_CONTUR section
+
+In the INIT_CONTUR section I have implemented the init_contur function that
+prints all 16 cases of the marching squares algorithm.
+
+# EXIT section
+
+In the EXIT section I make sure I don't have any memory leaks then print the
+final and most important message "Gigel a terminat".

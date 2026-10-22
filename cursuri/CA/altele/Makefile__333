@@ -1,0 +1,12 @@
+# Copyright 2024 Darius Neatu (neatudarius@gmail.com)
+
+# build all targets
+build:
+	gcc -Wall -Wextra -o task0 task0.c vector.c matrix.c util.c
+	gcc -Wall -Wextra -o task1 task1.c vector.c matrix.c util.c
+
+# clean all related target files
+clean:
+	rm -f *.o task0 task1
+
+.PHONY: clean
